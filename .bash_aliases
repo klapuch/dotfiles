@@ -9,6 +9,7 @@ alias php_tag='ctags-exuberant -f tags.vim --languages=PHP -R'
 alias cz_sub='recode -f cp1250..utf8 $1'
 alias pvim='php_tag && vim'
 alias tmux='tmux -2'
+alias remove_docker='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
 
 function pg_import() {
    psql -h localhost -U postgres -W $1 < $2

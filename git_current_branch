@@ -1,0 +1,10 @@
+export PSORIG="$PS1"
+function GITBRANCH() {
+        BRANCH="$(git branch 2>/dev/null | grep '*' | cut -d" " -f2-)"
+        if [ -n "$BRANCH" ] ; then
+                export PS1=$PSORIG$(echo -en "\[\033[01;33m\]$BRANCH > \[\033[00m\]")
+        else
+                export PS1="$PSORIG"
+        fi
+}
+PROMPT_COMMAND="GITBRANCH"

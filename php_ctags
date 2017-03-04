@@ -1,1 +1,14 @@
-/home/dom/php_ctags
+#!/bin/sh
+ctags-exuberant -f tags.vim \
+    -h "\.php" -R \
+    --exclude=\"vendor/bin\" \
+    --exclude=\"bin\" \
+    --exclude=\"public\" \
+    --exclude=\"www\" \
+    --exclude=\".git\" \
+    --totals=yes \
+    --tag-relative=yes \
+    --PHP-kinds=+cf \
+    --regex-PHP='/abstract class ([^ ]*)/\1/c/' \
+    --regex-PHP='/interface ([^ ]*)/\1/c/' \
+	--regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/'

@@ -5,11 +5,12 @@ alias chint='ping www.google.com'
 alias initLocal='sudo rm -rf temp/ && build/build initLocal && sudo chmod 0777 -R temp log'
 alias ..='cd ..'
 alias sfe='BACKEND_URL=http://localhost/spider-backend/public npm start'
-alias php_tag='ctags-exuberant -f tags.vim --languages=PHP -R'
+alias php_tag='sh php_ctags'
 alias cz_sub='recode -f cp1250..utf8 $1'
 alias pvim='php_tag && vim'
 alias tmux='tmux -2'
 alias remove_docker='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
+alias g='git'
 
 function pg_import() {
    psql -h localhost -U postgres -W $1 < $2

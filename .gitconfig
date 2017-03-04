@@ -3,10 +3,8 @@
 	email = klapuchdominik@gmail.com
 	signingkey = 13CBDB6560FF1B1B
 [core]
-	# windows->true, linux-> input
 	autocrlf = input
 	safecrlf = false
-	# must be absolute path
 	excludesfile = /home/dom/.gitignore
 [alias]
 	f = fetch
@@ -27,12 +25,10 @@
 	rba = rebase --abort
 	rh = reset --hard
 	rs = reset --soft
-    su = submodule update
-    set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-    cdiff = !sh -c 'git log --oneline $1 ^$2' -
-	# graph for current branch
+	su = submodule update
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	cdiff = !sh -c 'git log --oneline $1 ^$2' -
 	l  = log --graph --decorate --pretty=oneline --abbrev-commit
-	# graph for all branches
 	ll = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	# log for current branch showing diffs (-m is for showing mergecommits too)
 	ld = log -p -m
@@ -50,7 +46,6 @@
 	wip = !git add --all && git commit -m WIP
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [remote "origin"]
-	# git push -> push current HEAD into tracked remote branch
 	push = HEAD
 [diff]
 	mnemonicprefix = true

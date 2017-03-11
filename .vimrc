@@ -43,10 +43,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/Temporary/*
-map <F2> :!./vendor/bin/tester -o console -s -p php-cgi -j 8 -c ./Tests/php.ini % <CR>
-map <F3> :!./vendor/bin/tester -o console -s -p php-cgi -j 8 -c ./Tests/php.ini Tests/ <CR>
-map <F4> :!composer dump-autoload <CR>
-map <F5> :!composer update <CR>
+map <F2> :call VimuxRunCommand("vendor/bin/tester -o console -s -p php-cgi -j 8 -c ./Tests/php.ini " . bufname("%")) <CR>
+map <F3> :call VimuxRunCommand("vendor/bin/tester -o console -s -p php-cgi -j 8 -c ./Tests/php.ini Tests/") <CR>
+map <F4> :call VimuxRunCommand ("composer dump-autoload") <CR>
+map <F5> :call VimuxRunCommand ("composer update") <CR>
 filetype plugin on
 filetype indent on
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -116,3 +116,22 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+" fugitive git bindings
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gst :Gstatus<CR>
+nnoremap <space>gcm :Gcommit -v -q<CR>
+nnoremap <space>gt :Gcommit -v -q %:p<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>ge :Gedit<CR>
+nnoremap <space>gr :Gread<CR>
+nnoremap <space>gw :Gwrite<CR><CR>
+nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <space>gp :Ggrep<Space>
+nnoremap <space>gm :Gmove<Space>
+nnoremap <space>gb :Git branch<Space>
+nnoremap <space>gco :Git checkout<Space>
+nnoremap <space>gps :Git push<CR>
+nnoremap <space>gpl :git pull<CR>
+
+xnoremap p pgvy

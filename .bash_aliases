@@ -8,7 +8,7 @@ alias pg_connect='psql -h localhost -U postgres -W'
 
 # Development
 alias cu='composer update'
-alias cud='composer dump-autoload -o'
+alias cud='composer dump-autoload -o -a'
 alias php_tag='sh ~/php_ctags'
 alias pvim='php_tag && vim'
 
@@ -21,6 +21,7 @@ alias sfe='BACKEND_URL=http://localhost/spider-backend/public npm start'
 # Tools
 alias cz_sub='recode -f cp1250..utf8 $1'
 alias chint='ping www.google.com'
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 
 # Shortcuts
@@ -34,3 +35,4 @@ alias rm='rm -v'
 alias ll='ls -lha'
 alias la='ls -A'
 alias l='ls -CF'
+alias up='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get clean'

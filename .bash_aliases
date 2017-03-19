@@ -27,6 +27,8 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 # Shortcuts
 alias tmux='tmux -2'
 alias ..='cd ..'
+alias c='clear'
+alias e='exit'
 alias remove_docker='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
 alias cp='cp -v'
 alias mv='mv -v'

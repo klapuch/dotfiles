@@ -26,6 +26,7 @@
 	rh = reset --hard
 	rs = reset --soft
 	su = submodule update
+	ps = push
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 	cdiff = !sh -c 'git log --oneline $1 ^$2' -
 	l  = log --graph --decorate --pretty=oneline --abbrev-commit

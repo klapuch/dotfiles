@@ -135,3 +135,7 @@ nnoremap <space>gps :Git push<CR>
 nnoremap <space>gpl :git pull<CR>
 
 xnoremap p pgvy
+
+nmap XX "_dd"
+set undofile
+set undodir=~/.vim/undodir

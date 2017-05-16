@@ -1,0 +1,12 @@
+__proj()
+{
+	local cur prev opts
+	COMPREPLY=()
+
+	_get_comp_words_by_ref cur prev
+
+	opts="`cd /var/www; ls -1`"
+
+	COMPREPLY=( $( compgen -W "${opts}" -- "$cur" ) )
+}
+complete -F __proj proj

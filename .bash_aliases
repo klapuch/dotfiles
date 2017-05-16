@@ -11,7 +11,10 @@ alias cu='composer update'
 alias cud='composer dump-autoload -o -a'
 alias php_tag='sh ~/php_ctags'
 alias pvim='php_tag && vim'
-
+function proj() {
+	FOO="/var/www/$1"
+	cd ${FOO// /}
+}
 
 # Current development
 alias initLocal='sudo rm -rf temp/ && build/build initLocal && sudo chmod 0777 -R temp log'

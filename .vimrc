@@ -139,3 +139,4 @@ xnoremap p pgvy
 nmap XX "_dd"
 set undofile
 set undodir=~/.vim/undodir
+autocmd Filetype javascript setlocal ts=2 sw=2 expandtab

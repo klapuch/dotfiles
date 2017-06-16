@@ -8,7 +8,7 @@ alias pg_connect='psql -h localhost -U postgres -W'
 
 # Development
 alias cu='composer update'
-alias cud='composer dump-autoload -o -a'
+alias cud='composer dump-autoload -oa'
 alias php_tag='sh ~/php_ctags'
 alias pvim='php_tag && vim'
 function proj() {
@@ -36,8 +36,7 @@ alias remove_docker='docker rm $(docker ps -a -q) && docker rmi $(docker images 
 alias cp='cp -v'
 alias mv='mv -v'
 alias ln='ln -v'
-alias rm='rm -v'
 alias ll='ls -lha'
 alias la='ls -A'
 alias l='ls -CF'
-alias up='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get clean'
+alias up='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt autoremove && sudo apt-get clean'

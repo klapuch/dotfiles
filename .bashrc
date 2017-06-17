@@ -3,6 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
+export TERM=screen-256color
 case $- in
     *i*) ;;
       *) return;;

@@ -12,7 +12,7 @@ alias cud='composer dump-autoload -oa'
 alias php_tag='sh ~/php_ctags'
 alias pvim='php_tag && vim'
 function proj() {
-	FOO="/var/www/$1"
+	FOO="$HOME/Projects/$1"
 	cd ${FOO// /}
 }
 

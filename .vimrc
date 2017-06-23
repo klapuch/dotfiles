@@ -1,11 +1,14 @@
 "PLUGING
 call plug#begin('~/.vim/plugged')
-Plug 'git@github.com:scrooloose/nerdtree.git'
 Plug 'git@github.com:Raimondi/delimitMate.git'
+Plug 'git@github.com:airblade/vim-gitgutter.git'
 Plug 'git@github.com:ervandew/supertab.git'
-Plug 'git@github.com:tpope/vim-repeat.git'
-Plug 'git@github.com:terryma/vim-multiple-cursors.git'
 Plug 'git@github.com:kien/ctrlp.vim.git'
+Plug 'git@github.com:scrooloose/nerdtree.git'
+Plug 'git@github.com:terryma/vim-multiple-cursors.git'
+Plug 'git@github.com:tpope/vim-repeat.git'
+Plug 'git@github.com:tpope/vim-surround.git'
+Plug 'git@github.com:vim-airline/vim-airline.git'
 call plug#end()
 
 set number
@@ -91,3 +94,6 @@ set fileencoding=utf-8
 " From long one line is made multiline
 map j gj
 map k gk
+
+" Path to generated ctags, if any
+set tags=./tags.vim;/

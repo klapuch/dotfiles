@@ -5,7 +5,7 @@ __proj()
 
 	_get_comp_words_by_ref cur prev
 
-	opts="`cd /var/www; ls -1`"
+	opts="`cd ~/Projects; ls -1`"
 
 	COMPREPLY=( $( compgen -W "${opts}" -- "$cur" ) )
 }

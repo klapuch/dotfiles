@@ -15,6 +15,13 @@ function proj() {
 	FOO="$HOME/Projects/$1"
 	cd ${FOO// /}
 }
+function dc() {
+	if [[ $# -eq 0 ]] ; then
+		echo 'some message'
+		exit 1
+	fi
+	docker-compose -p $1 up -d
+}
 
 # Current development
 alias initLocal='sudo rm -rf temp/ && build/build initLocal && sudo chmod 0777 -R temp log'
@@ -28,6 +35,8 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 
 # Shortcuts
+alias dcs='docker stop $(docker ps -a -q)'
+alias h='history'
 alias tmux='tmux -2'
 alias ..='cd ..'
 alias c='clear'

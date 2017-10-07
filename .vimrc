@@ -9,6 +9,9 @@ Plug 'git@github.com:terryma/vim-multiple-cursors.git'
 Plug 'git@github.com:tpope/vim-repeat.git'
 Plug 'git@github.com:tpope/vim-surround.git'
 Plug 'git@github.com:vim-airline/vim-airline.git'
+Plug 'git@github.com:vim-scripts/matchit.zip.git'
+Plug 'git@github.com:scrooloose/nerdcommenter.git'
+Plug 'git@github.com:kshenoy/vim-signature.git'
 call plug#end()
 
 set number

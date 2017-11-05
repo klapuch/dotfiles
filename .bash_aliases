@@ -7,6 +7,7 @@ alias pg_connect='psql -h localhost -U postgres -W'
 
 
 # Development
+alias git=hub
 alias cu='composer update'
 alias cud='composer dump-autoload -oa'
 alias php_tag='sh ~/php_ctags'
@@ -22,11 +23,6 @@ function dc() {
 	fi
 	docker-compose -p $1 up -d
 }
-
-# Current development
-alias initLocal='sudo rm -rf temp/ && build/build initLocal && sudo chmod 0777 -R temp log'
-alias sfe='BACKEND_URL=http://localhost/spider-backend/public npm start'
-
 
 # Tools
 alias cz_sub='recode -f cp1250..utf8 $1'

@@ -100,3 +100,6 @@ map k gk
 
 " Path to generated ctags, if any
 set tags=./tags.vim;/
+
+" NerdTREE - show hidden files
+let NERDTreeShowHidden=1

@@ -49,6 +49,8 @@
 	wip = !git add --all && git commit -m WIP
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lbs = branch --sort=-committerdate
+	sts = stash
+	stsp = stash pop
 [remote "origin"]
 	push = HEAD
 [diff]

@@ -12,6 +12,8 @@ Plug 'git@github.com:vim-airline/vim-airline.git'
 Plug 'git@github.com:vim-scripts/matchit.zip.git'
 Plug 'git@github.com:scrooloose/nerdcommenter.git'
 Plug 'git@github.com:kshenoy/vim-signature.git'
+Plug 'git@github.com:godlygeek/tabular.git'
+Plug 'git@github.com:plasticboy/vim-markdown.git'
 call plug#end()
 
 set number

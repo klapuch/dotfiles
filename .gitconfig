@@ -51,6 +51,7 @@
 	lbs = branch --sort=-committerdate
 	sts = stash
 	stsp = stash pop
+	commit-to-revision = "!f() { if [ -z \"$1\" ]; then echo 'First parameter must be hash commit id.'; return; fi; git stash && git rebase -i \"$1^\" && git stash pop && git commit --all --amend --no-edit && git rebase --continue; }; f"
 [remote "origin"]
 	push = HEAD
 [diff]

@@ -100,6 +100,9 @@ set fileencoding=utf-8
 map j gj
 map k gk
 
+" Reveal tree view
+nmap <C-b> :NERDTreeFind<CR>
+
 " Path to generated ctags, if any
 set tags=./tags.vim;/
 

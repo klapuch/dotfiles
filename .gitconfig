@@ -24,9 +24,10 @@
 	rbc = rebase --continue
 	rba = rebase --abort
 	rh = reset --hard
-	rs = reset --soft
+	rs = reset HEAD .
 	su = submodule update
 	ps = push
+	pst = !sh -c 'git push && ./tools/tools ci:run -c'
 	psf = push --force
 	p = pull
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`

@@ -1,34 +1,26 @@
 tmux new-session -s csfd -d -n backend
-tmux send-keys -t csfd:backend 'cd ~/Projects/csfd/csfd.cz' C-m
+tmux send-keys -t csfd:backend 'cd ~/Projects/csfd/csfd' C-m
 tmux split-window -h -t csfd:backend
-tmux send-keys -t csfd:backend.2 'ssh csfdweb' C-m
-
-tmux new-window -n convert -t csfd
-tmux send-keys -t csfd:convert 'cd ~/Projects/csfd/csfd.cz' C-m
-tmux split-window -h -t csfd:convert
-tmux send-keys -t csfd:convert.2 'ssh csfdconvert' C-m
+tmux send-keys -t csfd:backend.2 'ssh csfd@csfd-www' C-m
 
 tmux new-window -n design -t csfd
-tmux send-keys -t csfd:design 'cd ~/Projects/csfd/csfddesign; cd site/; ./start-server' C-m
+tmux send-keys -t csfd:design 'cd ~/Projects/csfd/csfd-design; cd site/; ./start-server' C-m
 
 tmux select-window -t csfd:backend
 
 
 
-(cd ~/Projects/FindMyFriends/api && nohup docker-compose -p fmf up -d --build --force-recreate > /dev/null 2>&1)
-(cd ~/Projects/FindMyFriends/frontend && cd docker/ && nohup docker-compose -p fmff up -d --build --force-recreate > /dev/null 2>&1)
+tmux new-session -s bulletpoint -d -n backend
+tmux send-keys -t bulletpoint:backend 'cd ~/Projects/bulletpoint' C-m
+tmux split-window -h -t bulletpoint:backend
+tmux send-keys -t bulletpoint:backend.2 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` bulletpoint_php-fpm_1 bash' C-m
 
-tmux new-session -s fmf -d -n api
-tmux send-keys -t fmf:api 'cd ~/Projects/FindMyFriends/api' C-m
-tmux split-window -h -t fmf:api
-tmux send-keys -t fmf:api.2 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` fmf_php-fpm_1 bash' C-m
+tmux new-window -n frontend -t bulletpoint
+tmux send-keys -t bulletpoint:frontend 'cd ~/Projects/bulletpoint' C-m
+tmux split-window -h -t bulletpoint:frontend
+tmux send-keys -t bulletpoint:frontend.2 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` bulletpoint_node_1 bash' C-m
 
-tmux new-window -n frontend -t fmf
-tmux send-keys -t fmf:frontend 'cd ~/Projects/FindMyFriends/frontend' C-m
-tmux split-window -h -t fmf:frontend
-tmux send-keys -t fmf:frontend.2 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` fmff_node_1 bash' C-m
+tmux new-window -n database -t bulletpoint
+tmux send-keys -t bulletpoint:database 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` bulletpoint-postgres bash' C-m
 
-tmux new-window -n database -t fmf
-tmux send-keys -t fmf:database 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` find-my-friends-postgres bash' C-m
-
-tmux select-window -t fmf:api
+tmux select-window -t bulletpoint:backend

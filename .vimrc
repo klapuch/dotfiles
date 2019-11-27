@@ -14,6 +14,7 @@ Plug 'git@github.com:scrooloose/nerdcommenter.git'
 Plug 'git@github.com:kshenoy/vim-signature.git'
 Plug 'git@github.com:godlygeek/tabular.git'
 Plug 'git@github.com:plasticboy/vim-markdown.git'
+Plug 'git@github.com:lifepillar/pgsql.vim.git'
 call plug#end()
 
 set number
@@ -108,3 +109,6 @@ set tags=./tags.vim;/
 
 " NerdTREE - show hidden files
 let NERDTreeShowHidden=1
+
+" all .sql are parsed as postgres syntax
+let g:sql_type_default = 'pgsql'

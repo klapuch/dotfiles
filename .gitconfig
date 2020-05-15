@@ -1,7 +1,9 @@
 [user]
 	name = Dominik Klapuch
 	email = klapuchdominik@gmail.com
-	signingkey = 13CBDB6560FF1B1B
+	signingkey = 0x222FF1412F8F5328
+[commit]
+	gpgsign = true
 [core]
 	autocrlf = input
 	safecrlf = false
@@ -74,3 +76,5 @@
 	added = green
 	changed = yellow
 	untracked = cyan
+[gpg]
+	program = gpg2

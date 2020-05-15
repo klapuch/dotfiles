@@ -6,10 +6,6 @@ fi
 alias git=hub
 alias php_tag='sh ~/php_ctags'
 alias pvim='php_tag && vim'
-function proj() {
-	FOO="$HOME/Projects/$1"
-	cd ${FOO// /}
-}
 function dc() {
 	if [[ $# -eq 0 ]] ; then
 		echo 'some message'
@@ -25,11 +21,6 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # Shortcuts
 alias dcs='docker stop $(docker ps -a -q)'
-alias h='history'
 alias tmux='tmux -2'
-alias ..='cd ..'
 alias remove_docker='docker rm -f $(docker ps -a -q) ; docker rmi -f $(docker images -q) && docker system prune && docker system prune --volumes'
-alias ll='ls -lha'
-alias la='ls -A'
-alias l='ls -CF'
 alias up='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt autoremove && sudo apt-get clean'

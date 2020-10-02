@@ -3,24 +3,11 @@ tmux send-keys -t csfd:backend 'cd ~/Projects/csfd/csfd' C-m
 tmux split-window -h -t csfd:backend
 tmux send-keys -t csfd:backend.2 'ssh csfd@csfd-www' C-m
 
-tmux new-window -n design -t csfd
-tmux send-keys -t csfd:design 'cd ~/Projects/csfd/csfd-design; cd site/; ./start-server' C-m
-
 tmux select-window -t csfd:backend
 
+tmux new-session -s fun -d -n base
+tmux send-keys -t fun:base 'cd ~/Projects' C-m
+tmux split-window -h -t fun:base
+tmux send-keys -t fun:base.2 'cd ~/Projects' C-m
 
-
-tmux new-session -s bulletpoint -d -n backend
-tmux send-keys -t bulletpoint:backend 'cd ~/Projects/bulletpoint' C-m
-tmux split-window -h -t bulletpoint:backend
-tmux send-keys -t bulletpoint:backend.2 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` bulletpoint_php-fpm_1 bash' C-m
-
-tmux new-window -n frontend -t bulletpoint
-tmux send-keys -t bulletpoint:frontend 'cd ~/Projects/bulletpoint' C-m
-tmux split-window -h -t bulletpoint:frontend
-tmux send-keys -t bulletpoint:frontend.2 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` bulletpoint_node_1 bash' C-m
-
-tmux new-window -n database -t bulletpoint
-tmux send-keys -t bulletpoint:database 'docker exec -it --env COLUMNS=`tput cols` --env LINES=`tput lines` bulletpoint-postgres bash' C-m
-
-tmux select-window -t bulletpoint:backend
+tmux select-window -t fun:base

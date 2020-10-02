@@ -122,3 +122,5 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpg-connect-agent updatestartuptty /bye > /dev/null
 gpgconf --launch gpg-agent
 export KEYID=0x222FF1412F8F5328
+
+export SUDO_EDITOR=/usr/bin/vim

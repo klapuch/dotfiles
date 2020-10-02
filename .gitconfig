@@ -2,8 +2,8 @@
 	name = Dominik Klapuch
 	email = klapuchdominik@gmail.com
 	signingkey = 0x222FF1412F8F5328
-[commit]
-	gpgsign = true
+#[commit]
+#	gpgsign = true
 [core]
 	autocrlf = input
 	safecrlf = false
@@ -11,50 +11,29 @@
 [alias]
 	f = fetch
 	# updates your branch with upstream (if fast-forward is possible)
-	ff = !git merge --ff-only `git rev-parse --symbolic-full-name --abbrev-ref=strict HEAD@{u}`
 	fp = fetch --prune
 	st = status
 	cm = commit
 	cma = commit --amend
 	cman = commit --amend --no-edit
-	br = branch
 	co = checkout
 	cp = cherry-pick
-	df = diff
 	rb = rebase
-	rbi = rebase -i
 	rbc = rebase --continue
 	rba = rebase --abort
-	rh = reset --hard
-	rs = reset HEAD .
-	su = submodule update
 	ps = push
 	pst = !sh -c 'git push && ./tools/tools ci:run -c'
 	psf = push --force
 	p = pull
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-	cdiff = !sh -c 'git log --oneline $1 ^$2' -
 	l  = log --graph --decorate --pretty=oneline --abbrev-commit
 	ll = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	# log for current branch showing diffs (-m is for showing mergecommits too)
-	ld = log -p -m
-	# log for current branch showing summary of changed files (-m is for showing mergecommits too)
-	ls = log --stat -m
-	# number of commits for each person
 	stats = shortlog -n -s --no-merges
-	# remove remote branch (remote must be named origin), usage: git rmb test
-	rmb = !sh -c 'git push origin :$1' -
-	# shows local > tracked remote
-	brt = for-each-ref --format=\"%(refname:short) > %(upstream:short)\" refs/heads
-	# get upstream tracked branch or error
-	brtracked = rev-parse --symbolic-full-name --abbrev-ref=strict HEAD@{u}
-	# commit all changes to a WIP commit
 	wip = !git add --all && git commit -m WIP --no-verify
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lbs = branch --sort=-committerdate
 	sts = stash
 	stsp = stash pop
-	fixup = "!f() { TARGET=$(git rev-parse \"$1\"); git commit --fixup=$TARGET && GIT_EDITOR=true git rebase --interactive --autosquash $TARGET~; }; f"
 [remote "origin"]
 	push = HEAD
 [diff]

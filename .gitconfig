@@ -19,8 +19,10 @@
 	co = checkout
 	cp = cherry-pick
 	rb = rebase
+	rbi = rebase --interactive
 	rbc = rebase --continue
 	rba = rebase --abort
+	rh = reset --hard
 	ps = push
 	pst = !sh -c 'git push && ./tools/tools ci:run -c'
 	psf = push --force

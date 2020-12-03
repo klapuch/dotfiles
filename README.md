@@ -11,7 +11,7 @@
 - ln -sfn /home/dom/dotfiles/git_current_branch /home/dom/git_current_branch
 
 
-mkdir -p ~/.vim/colors && curl -O https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
+mkdir -p ~/.vim/colors && cd ~/.vim/colors && curl -O https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 

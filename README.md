@@ -9,6 +9,7 @@ ln -sfn /home/dom/dotfiles/.tmux.conf /home/dom/.tmux.conf
 ln -sfn /home/dom/dotfiles/.vimrc /home/dom/.vimrc
 ln -sfn /home/dom/dotfiles/.wgetrc /home/dom/.wgetrc
 ln -sfn /home/dom/dotfiles/.bash_gpg /home/dom/.bash_gpg
+ln -sfn /home/dom/dotfiles/.psqlrc /home/dom/.psqlrc
 ln -sfn /home/dom/dotfiles/git_current_branch /home/dom/git_current_branch
 ``` 
 

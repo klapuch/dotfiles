@@ -76,6 +76,9 @@ shopt -s expand_aliases
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
+HISTSIZE=2000
+HISTFILESIZE=4000
+
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -92,3 +95,4 @@ fi
 if [ -f ~/git_current_branch ]; then
     . ~/git_current_branch
 fi
+

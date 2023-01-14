@@ -1,3 +1,4 @@
+\setenv PAGER pspg
 \set QUIET 1
 \pset linestyle unicode
 \pset border 2

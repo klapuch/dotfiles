@@ -10,8 +10,6 @@
 	excludesfile = ~/.gitignore
 [alias]
 	f = fetch
-	# updates your branch with upstream (if fast-forward is possible)
-	fp = fetch --prune
 	st = status
 	cm = commit
 	cma = commit --amend
@@ -29,8 +27,6 @@
 	p = pull
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 	l  = log --graph --decorate --pretty=oneline --abbrev-commit
-	ll = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	# log for current branch showing diffs (-m is for showing mergecommits too)
 	stats = shortlog -n -s --no-merges
 	wip = !git add --all && git commit -m WIP --no-verify
 	lbs = branch --sort=-committerdate

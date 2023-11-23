@@ -23,12 +23,13 @@
 	rh = reset --hard
 	ps = push
 	pst = !sh -c 'git push && ./tools/tools ci:run -c'
-	psf = push --force
+	psf = push --force-with-lease
 	p = pull
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 	l  = log --graph --decorate --pretty=oneline --abbrev-commit
 	stats = shortlog -n -s --no-merges
 	wip = !git add --all && git commit -m WIP --no-verify
+	gc-clean-all = !git fsck && git gc --prune=now && git prune && git gc
 	lbs = branch --sort=-committerdate
 	sts = stash
 	stsp = stash pop

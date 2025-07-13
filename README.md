@@ -10,6 +10,10 @@ ln -sfn /home/dom/dotfiles/.vimrc /home/dom/.vimrc
 ln -sfn /home/dom/dotfiles/.wgetrc /home/dom/.wgetrc
 ln -sfn /home/dom/dotfiles/.bash_gpg /home/dom/.bash_gpg
 ln -sfn /home/dom/dotfiles/.psqlrc /home/dom/.psqlrc
+ln -sf /home/dom/dotfiles/.config/hypr /home/dom/.config/hypr
+ln -sf /home/dom/dotfiles/.config/kitty /home/dom/.config/kitty
+ln -sf /home/dom/dotfiles/.config/waybar /home/dom/.config/waybar
+ln -sf /home/dom/dotfiles/.config/mako /home/dom/.config/mako
 ln -sfn /home/dom/dotfiles/git_current_branch /home/dom/git_current_branch
 ``` 
 

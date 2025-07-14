@@ -1,10 +1,3 @@
-function dc() {
-	if [[ $# -eq 0 ]] ; then
-		exit 1
-	fi
-	docker-compose -p $1 up -d
-}
-
 secret () {
 	output=~/"${1}".$(date +%s).enc
 	gpg --encrypt --armor --output ${output} -r $KEYID "${1}" && echo "${1} -> ${output}"

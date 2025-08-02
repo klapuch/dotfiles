@@ -21,12 +21,10 @@
         "cpu",
         "memory",
         "temperature",
-        "backlight",
         "keyboard-state",
         "hyprland/language",
         "clock",
-        "tray",
-        "custom/power"
+        "tray"
     ],
     // Modules configuration
      "hyprland/workspaces": {

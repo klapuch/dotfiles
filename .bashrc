@@ -92,6 +92,9 @@ fi
 if [ -f ~/.env ]; then
     . ~/.env
 fi
+if [ -f ~/.env.secret ]; then
+    . ~/.env.secret
+fi
 if [ -f ~/git_current_branch ]; then
     . ~/git_current_branch
 fi

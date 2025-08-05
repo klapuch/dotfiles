@@ -22,9 +22,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-let g:loaded_netrw = 1
-let g:loaded_netrwPlugin = 1
-
 set number
 syntax enable
 colorscheme monokai

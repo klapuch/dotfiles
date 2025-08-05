@@ -1,38 +1,38 @@
-"PLUGING
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/Raimondi/delimitMate.git'
-Plug 'https://github.com/airblade/vim-gitgutter.git'
-Plug 'https://github.com/ervandew/supertab.git'
-Plug 'https://github.com/kien/ctrlp.vim.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/terryma/vim-multiple-cursors.git'
-Plug 'https://github.com/tpope/vim-repeat.git'
-Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'https://github.com/vim-scripts/matchit.zip.git'
-Plug 'https://github.com/scrooloose/nerdcommenter.git'
-Plug 'https://github.com/kshenoy/vim-signature.git'
-Plug 'https://github.com/godlygeek/tabular.git'
-Plug 'https://github.com/plasticboy/vim-markdown.git'
-Plug 'https://github.com/lifepillar/pgsql.vim.git'
+
+Plug 'Raimondi/delimitMate'
+Plug 'airblade/vim-gitgutter'
+Plug 'ervandew/supertab'
+Plug 'kien/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/matchit.zip'
+Plug 'kshenoy/vim-signature'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'lifepillar/pgsql.vim'
+Plug 'crusoexia/vim-monokai'
+Plug 'Olical/conjure'
+Plug 'luochen1990/rainbow'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
+
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
 
 set number
 syntax enable
 colorscheme monokai
 
-" CTRL + C to show NerdTree
-map <C-c> :NERDTreeToggle<CR>
-
-" Show NerdTree on start for no selected file (vim)
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Close vim if NerdTree is the last window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:rainbow_active = 1
 
 " Show constraint of 80 column
-set colorcolumn=81
+set colorcolumn=120
 
 " Remember undo after you close Vim
 set undofile
@@ -50,34 +50,12 @@ set tabstop=4
 set noexpandtab
 set smarttab
 
-" Omni complete for several languages
-filetype plugin on
-au FileType php set omnifunc=phpcomplete#CompletePHP
-au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-au FileType html set omnifunc=htmlcomplete#CompleteTags
-au FileType xhtml set omnifunc=htmlcomplete#CompleteTags
-au FileType css set omnifunc=csscomplete#CompleteCSS
-au FileType xml set omnifunc=xmlcomplete#CompleteTags
-au FileType php set omnifunc=phpcomplete#CompletePHP
-let php_sql_query=1                                                                                        
-let php_htmlInStrings=1
-
-" Tab for Omni complete
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
-" Vim-like selection for Omni complete suggestion & CTRL - P
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
-
 " Moving selected parts in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Ignore files for CTRL - P
 set wildignore+=*/tmp/*,*/temp/*,*.so,*.swp,*.zip,*/Temporary/*
-
-" PHPT behaves like PHP files
-autocmd BufRead,BufNewFile *.phpt set filetype=php
 
 " Highlight searches
 set hlsearch
@@ -100,15 +78,6 @@ set fileencoding=utf-8
 " From long one line is made multiline
 map j gj
 map k gk
-
-" Reveal tree view
-nmap <C-b> :NERDTreeFind<CR>
-
-" Path to generated ctags, if any
-set tags=./tags.vim;/
-
-" NerdTREE - show hidden files
-let NERDTreeShowHidden=1
 
 " all .sql are parsed as postgres syntax
 let g:sql_type_default = 'pgsql'
